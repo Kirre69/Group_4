@@ -2,5 +2,8 @@
 This project has the aim and objective to Identify an exploit (in a controlled lab web app) XSS and/or SQL Injection vulnerabilities and provide remediation guidance and test cases.
 
 **Required Tools & Lab Setup:**
-- Owasp Juice Shop or similar intentionally vulnerable app.
+- [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) or similar intentionally vulnerable app.
 - Burp Suite (Community/Pro), Python/Requests, SQLmap (lab-only).
+
+## Overview
+OWASP Juice Shop was used for this project, it offers a vast amount of different attack vectors to be explored and exploited. However we have chosen to highlight some of the XSS and SQL Injection exploits because they are some of the most well known in the area of Web Application attacks. 
