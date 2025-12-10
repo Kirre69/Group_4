@@ -157,8 +157,8 @@ An attacker can alter the SQL query executed by the application. In a real syste
 - Use parameterized SQL queries for everything that deals with the database
 - Validate the order ID so that only the expected format is accepted.
 - Implement generic error messages so SQL errors do not reveal backend details.
-**Command:**
-GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.
+**Instructions:**
+GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.1
 
 ### 3.7 Login Bypass (Jim & Bender):
 The login mechanism was vulnerable to SQL injections due to unsafe string concatenation in the authentication query. By injecting SQL comment markers and operators into the username field, it was possible to terminate the original WHERE clause and force asuccessful login without knowing the password. This allowed authentication as users such as Jim and/or Bender.
