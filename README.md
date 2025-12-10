@@ -39,14 +39,10 @@ This section summarises the vulnerabilities we discovered in Juice Shop, includi
 SQLmap was used to a small extent, and what it does is identifies and confirms SQL infection vulnerabilities in Juice shop automatically. We first did it manually using burp suite and simple payloads, then we executed SQLMap commands to see what it would detect automatically, it mapped out some parameters that were injectable, and solved a challenge “error handling”. It demonstrated basic “GET” parameters but nothing that could be used for exploitation. We mainly used SQLmap to compare the automated scanning with the manual testing we did. The goal was to see how much it could detect on its own, and we got a little better understanding of the automated tools and manual SQL injection testing.
 
 **Impact:**
-
 SQLMap showed that partial automated detection can reveal sensitive backend data and confirm different injections points. In a real scenario an attacker could use automated tools like this to scan and exploit SQL injection flaws at websites.
 
 **Mitigation:**
-
-**-** Use parameterized SQL queries: Makes it so the database treat all user input as text only, so
-it can’t be interpreted as a command
-
+- Use parameterized SQL queries: Makes it so the database treat all user input as text only, so it can’t be interpreted as a command
 - Validate user input on the server: check what users send, blocks anything suspicious or with strange characters
 - Show simple error messages so if something goes wrong it doesn't give the attackers detailed database errors, just a generic message.
 
@@ -75,16 +71,13 @@ er=true&show_reposts=false&show_teaser=true"></iframe>
 ```
 ### 3.3 Stored XSS
 #### Product review
-One page in the Juice shop was vulnerable to stored XSS which was the product review section. When we left a review containing a `<script>` tag, the application saved our input directly into the database. When the product page was reloaded again, the browser executed our script for every user viewing that product.
-
-Which confirmed that the application stored user input without sanitizing or encoding it.
+One page in the Juice shop was vulnerable to stored XSS which was the product review section. When we left a review containing a `<script>` tag, the application saved our input directly into the database. When the product page was reloaded again, the browser executed our script for every user viewing that product. Which confirmed that the application stored user input without sanitizing or encoding it.
 
 **Impact:**
 Any user who opens the affected product page will run the attacker’s script. This can be used to steal cookies, redirect the user, change the UI, or perform actions on someone else's behalf.
 
 **Mitigation:**
-Validate and sanitize all user input before storing it. Apply proper output encoding when
-displaying text that comes from the database.
+Validate and sanitize all user input before storing it. Apply proper output encoding when displaying text that comes from the database.
 
 **Command:**
 ```javascript 
@@ -149,9 +142,10 @@ Attackers can retrieve information they should not have access to. In a real sys
 Use prepared statements and whitelisted search patterns. Never directly put user input into SQL queries.
 
 **Instructions:**
+```
 In Burp Suite:
 GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C% 20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277% %2C%20%278%27%2C%20%279%27%20FROM%20Users-- HTTP/1.
-
+```
 This is the same as: “q=')) UNION SELECT id, email, password, '4', '5', '6', '7', '8', '9' FROM Users”
 #### Track Order API
 The track order functionality (/rest/track-order/`<id>`) was vulnerable to SQL injection. The order ID parameter was inserted directly into a SQL query without validation. By appending SQL control characters to the order number in the URL, the database query could be manipulated.
