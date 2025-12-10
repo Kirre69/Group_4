@@ -61,9 +61,9 @@ In this challenge, the Juice Shop application accepted user controlled HTML that
 - Attackers could replace the harmless SoundCloud iframe with malicious JavaScript to steal session information, perform unwanted actions, or modify the user interface.
 - In a real system, this could lead to the account being compromised, phishing attacks, or full browser-side control over the victims session.
 **Mitigation:**
-● Sanitize and validate all user supplied HTML before storing or displaying it.
-● Use a strict allowlist of permitted tags (e.g., only plain text).
-● Apply output encoding to ensure that special characters are not interpreted as code.
+- Sanitize and validate all user supplied HTML before storing or displaying it.
+- Use a strict allowlist of permitted tags (e.g., only plain text).
+- Apply output encoding to ensure that special characters are not interpreted as code.
 
 **Command:**
 ```javascript
