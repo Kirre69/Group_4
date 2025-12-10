@@ -60,12 +60,13 @@ In this challenge, the Juice Shop application accepted user controlled HTML that
 - Any visitor to the affected page would automatically load and execute external content.
 - Attackers could replace the harmless SoundCloud iframe with malicious JavaScript to steal session information, perform unwanted actions, or modify the user interface.
 - In a real system, this could lead to the account being compromised, phishing attacks, or full browser-side control over the victims session.
+
 **Mitigation:**
 - Sanitize and validate all user supplied HTML before storing or displaying it.
 - Use a strict allowlist of permitted tags (e.g., only plain text).
 - Apply output encoding to ensure that special characters are not interpreted as code.
 
-**Command:**
+**Instructions:**
 ```javascript
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/
@@ -157,14 +158,14 @@ The track order functionality (/rest/track-order/`<id>`) was vulnerable to SQL i
 
 **Impact:**
 An attacker can alter the SQL query executed by the application. In a real system, this could lead to:
-● exposure of other users order information
-● SQL errors that leak database structure
-● possible leak of sensitive data
+- exposure of other users order information
+- SQL errors that leak database structure
+- possible leak of sensitive data
 
 **Mitigation:**
-● Use parameterized SQL queries for everything that deals with the database
-● Validate the order ID so that only the expected format is accepted.
-● Implement generic error messages so SQL errors do not reveal backend details.
+- Use parameterized SQL queries for everything that deals with the database
+- Validate the order ID so that only the expected format is accepted.
+- Implement generic error messages so SQL errors do not reveal backend details.
 **Command:**
 GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.
 
@@ -172,16 +173,16 @@ GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.
 The login mechanism was vulnerable to SQL injections due to unsafe string concatenation in the authentication query. By injecting SQL comment markers and operators into the username field, it was possible to terminate the original WHERE clause and force asuccessful login without knowing the password. This allowed authentication as users such as Jim and/or Bender.
 
 **Impact:**
-● Full account takeover without credentials
-● Access to personal information, order history, and account settings.
-● Ability to impersonate any user in the system.
-● In a real world environment, this would result in complete compromise of the authentication process.
+- Full account takeover without credentials
+- Access to personal information, order history, and account settings.
+- Ability to impersonate any user in the system.
+- In a real world environment, this would result in complete compromise of the authentication process.
 
 **Mitigation:**
-● Use parameterized queries for all authentication.
-● Sanitize or block SQL control characters (‘, “, ;, --) in input fields
-● Provide generic error responses to avoid exposing database syntax
-● Implement robust password handling.
+- Use parameterized queries for all authentication.
+- Sanitize or block SQL control characters (‘, “, ;, --) in input fields
+- Provide generic error responses to avoid exposing database syntax
+- Implement robust password handling.
 
 **Instruction:**
 Login as Bender:
