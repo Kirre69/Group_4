@@ -57,9 +57,9 @@ During the assignment, we started with basic reconnaissance to understand how th
 In this challenge, the Juice Shop application accepted user controlled HTML that was not sanitized before being stored or displayed. By submitting an iframe element that embedded external content, the browser executed and rendered it directly on the page. This confirmed that the site allowed unfiltered HTML injection, which is a form of stored Cross-Site Scripting (XSS).
 
 **Impact:**
-● Any visitor to the affected page would automatically load and execute external content.
-● Attackers could replace the harmless SoundCloud iframe with malicious JavaScript to steal session information, perform unwanted actions, or modify the user interface.
-● In a real system, this could lead to the account being compromised, phishing attacks, or full browser-side control over the victims session.
+- Any visitor to the affected page would automatically load and execute external content.
+- Attackers could replace the harmless SoundCloud iframe with malicious JavaScript to steal session information, perform unwanted actions, or modify the user interface.
+- In a real system, this could lead to the account being compromised, phishing attacks, or full browser-side control over the victims session.
 **Mitigation:**
 ● Sanitize and validate all user supplied HTML before storing or displaying it.
 ● Use a strict allowlist of permitted tags (e.g., only plain text).
