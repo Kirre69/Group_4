@@ -9,11 +9,11 @@ This project has the aim and objective to Identify an exploit (in a controlled l
 ## Overview
 OWASP Juice Shop was used for this project, it offers a vast amount of different attack vectors to be explored and exploited. However we have chosen to highlight some of the XSS and SQL Injection exploits because they are some of the most well known in the area of Web Application attacks. 
 
-
-Hampus Rodian
-William Mattsson
-David Thornberg
-Kristijan Danilovic Labudovic
+### Authors
+- Hampus Rodian
+- William Mattsson
+- David Thornberg
+- Kristijan Danilovic Labudovic
 
 ## Introduction
 This project aims to explore and demonstrate two well known vulnerabilities in web security: Cross-site Scripting (XSS) and SQL injection (SQLi). By working in a controlled lab environment, based on Juice Shop by OWASP also supplemented with tools in Kali Linux such as Burp Suite and SQLmap, we were able to identify and document real time vulnerabilities without risking real systems or data.
@@ -83,12 +83,10 @@ Validate and sanitize all user input before storing it. Apply proper output enco
 ```javascript 
 <iframe src="javascript:alert('xss')">
 ```
-
 ### 3.4 DOM XSS
 ```javascript 
 <iframe src="javascript:alert('xss')">
 ```
-
 **Search Field:**
 The search bar was vulnerable to DOM-based Cross-Site Scripting. Injected JavaScript could be directly executed in the browser due to unsafe handling of the query parameter in client-side JavaScript.
 
@@ -117,7 +115,6 @@ To mitigate this attack use parameterized SQL queries (prepared statements), val
 ' OR 1=1-- as username
 hej - as password.
 ```
-
 #### Product search
 The product search function (/rest/products/search) also had issues with SQL injection. You could change the value of the search parameter, which made the database return information that was never supposed to be shown, such as more products and internal database fields.
 
@@ -144,7 +141,7 @@ Use prepared statements and whitelisted search patterns. Never directly put user
 **Instructions:**
 ```
 In Burp Suite:
-GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C% 20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277% %2C%20%278%27%2C%20%279%27%20FROM%20Users-- HTTP/1.
+GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%%2C%20%278%27%2C%20%279%27%20FROM%20Users--HTTP/1.1
 ```
 This is the same as: “q=')) UNION SELECT id, email, password, '4', '5', '6', '7', '8', '9' FROM Users”
 #### Track Order API
