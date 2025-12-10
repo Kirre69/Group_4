@@ -1,4 +1,4 @@
-# Group_4
+# Group_4 Web Application: XSS & SQL Injection Proof-of-Concept
 This project has the aim and objective to Identify an exploit (in a controlled lab web app) XSS and/or SQL Injection vulnerabilities and provide remediation guidance and test cases.
 
 **Required Tools & Lab Setup:**
