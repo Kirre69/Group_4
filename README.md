@@ -213,4 +213,4 @@ From there everything started to make sense. We really began to understand the p
 
 [Pre-Made Cisco ethical hacker kali download](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
 
-[Juice shop guide](https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#_perform_a_persisted_xss_attack_without_using_the_frontend_application_at_all)
+[Juice shop guide](https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html)
