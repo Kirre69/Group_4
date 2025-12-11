@@ -113,7 +113,7 @@ To mitigate this attack use parameterized SQL queries (prepared statements), val
 ' OR 1=1-- as username
 hej - as password.
 ```
-
+`
 #### Product search
 The product search function (/rest/products/search) also had issues with SQL injection. You could change the value of the search parameter, which made the database return information that was never supposed to be shown, such as more products and internal database fields.
 
