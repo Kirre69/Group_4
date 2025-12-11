@@ -177,13 +177,13 @@ The login mechanism was vulnerable to SQL injections due to unsafe string concat
 - Implement robust password handling.
 
 **Instruction:**
-Login as Bender:
+`Login as Bender:
 bender@juice-sh.op'--
-a
+a`
 
-Login as Jim:
+`Login as Jim:
 jim@juice-sh.op'--
-a
+a`
 
 ## 4 What didn’t work
 
