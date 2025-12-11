@@ -187,8 +187,6 @@ password: a
 ```
 ## 4 What didn’t work
 
-Reflected XSS, we never got it to work, we tried so many different commands, especially in the customer feedback form. But every time we went to the about page on Juice shop, we never got the alert.
-
 Reflected XSS was one of the attacks we never succeeded with. We tried different payloads in several fields, especially in the customer feedback form, but nothing ever triggered. Even when we submitted scripts and then went to the “About Us” page to read the feedback, it didn't trigger. The alert never appeared, which is strange, but however, things change, versions can differ and some parts may have been updated or patched.
 
 Another challenge we were not able to succeed with was CSP Bypass. We tried different types of XSS-payloads, but when we did we didn’t manage to get it to complete the challenge.
