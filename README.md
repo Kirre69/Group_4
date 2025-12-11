@@ -24,11 +24,15 @@ The work combines both technical analysis with a security approach. We conducted
 
 Overall, the project results in a practical and well documented walkthrough of how SQLi and XSS can be discovered, exploited in a safe manner, and then properly mitigated. The goal was not only to show how these attacks work in practice, but also to enhance ourunderstanding of secure development principles and what developers can do to protect modern web applications from similar issues.
 ### Required Tools
-Oracle Virtualbox V. 7.2. 
+Oracle Virtualbox V. 7.2.4 
+
 Pre-built Cisco Kali Linux Virtual Machine
-OWASP Juice Shop V. 16.0.
-Burp Suite Community edition V. 2023.7.
-SQLmap 1.7.
+
+OWASP Juice Shop V. 16.0.1
+
+Burp Suite Community edition V. 2023.7.3
+
+SQLmap 1.7.8
 
 ## 2 Methodology
 To do this project we used a practical, experiment-based approach. All testing was done in a
