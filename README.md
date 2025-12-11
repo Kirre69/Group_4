@@ -4,8 +4,12 @@ This project has the aim and objective to Identify an exploit (in a controlled l
 
 **Required Tools & Lab Setup:**
 - [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) or similar intentionally vulnerable app.
-- Burp Suite (Community/Pro), Python/Requests, SQLmap (lab-only).
-- Kali Linux Virtual Machine
+- Pre-built Cisco Kali Linux Virtual Machine
+- Oracle Virtualbox V. 7.2.4 
+- OWASP Juice Shop V. 16.0.1
+- Burp Suite Community edition V. 2023.7.3
+- SQLmap 1.7.8
+  
 ## Overview
 OWASP Juice Shop was used for this project, it offers a vast amount of different attack vectors to be explored and exploited. However we have chosen to highlight some of the XSS and SQL Injection exploits because they are some of the most well known in the area of Web Application attacks. 
 
@@ -23,12 +27,6 @@ We began by systematically exploring the application to understand its structure
 The work combines both technical analysis with a security approach. We conducted reconnaissance of the application’s functions, we tested different entry points and built secure, minimal proof-of-concepts that demonstrate the impact of a vulnerability. In addition to the testing, we also shifted focus to how these issues can be fixed. Which included creating clear examples of secure solutions, such as using parameterized queries, input validation, and safe output handling. We also prepared test cases that developers can use to reproduce the vulnerabilities and confirm that the fixes actually work.
 
 Overall, the project results in a practical and well documented walkthrough of how SQLi and XSS can be discovered, exploited in a safe manner, and then properly mitigated. The goal was not only to show how these attacks work in practice, but also to enhance ourunderstanding of secure development principles and what developers can do to protect modern web applications from similar issues.
-### Required Tools
-- Oracle Virtualbox V. 7.2.4 
-- Pre-built Cisco Kali Linux Virtual Machine
-- OWASP Juice Shop V. 16.0.1
-- Burp Suite Community edition V. 2023.7.3
-- SQLmap 1.7.8
 
 ## 2 Methodology
 To do this project we used a practical, experiment-based approach. All testing was done in a
