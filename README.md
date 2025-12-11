@@ -44,8 +44,6 @@ SQLMap showed that partial automated detection can reveal sensitive backend data
 - Validate user input on the server: check what users send, blocks anything suspicious or with strange characters
 - Show simple error messages so if something goes wrong it doesn't give the attackers detailed database errors, just a generic message.
 
-During the assignment, we started with basic reconnaissance to understand how the Juice Shop handled basic input and user requests. After identifying possible weak points, we tested different functions using the techniques we learned in the labs, such as controlled payloads and manual requests through tools like Burp Suite. This allowed us to discover several vulnerabilities, including SQL injections and XSS, which are described in the section below.
-
 ### 3.2 Cross-Site Scripting (XSS)
 #### Bonus Payload
 In this challenge, the Juice Shop application accepted user controlled HTML that was not sanitized before being stored or displayed. By submitting an iframe element that embedded external content, the browser executed and rendered it directly on the page. This confirmed that the site allowed unfiltered HTML injection, which is a form of stored Cross-Site Scripting (XSS).
