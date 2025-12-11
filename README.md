@@ -177,14 +177,16 @@ The login mechanism was vulnerable to SQL injections due to unsafe string concat
 - Implement robust password handling.
 
 **Instruction:**
+```
 `Login as Bender:
 bender@juice-sh.op'--
 a`
-
+```
+```
 `Login as Jim:
 jim@juice-sh.op'--
 a`
-
+```
 ## 4 What didn’t work
 
 Reflected XSS, we never got it to work, we tried so many different commands, especially in the customer feedback form. But every time we went to the about page on Juice shop, we never got the alert.
