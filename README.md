@@ -31,7 +31,7 @@ Overall, the project results in a practical and well documented walkthrough of h
 ## 2 Methodology
 To do this project we used a practical, experiment-based approach. All testing was done in a
 controlled lab environment on the OWASP Juice Shop application.
-## 3 Findings
+## 3 Findings and Results
 This section summarises the vulnerabilities we discovered in Juice Shop, including multiple instances of both XSS and SQL Injection across different pages and functions.
 ### 3.1 SQLMap
 SQLmap was used to a small extent, and what it does is identifies and confirms SQL infection vulnerabilities in Juice shop automatically. We first did it manually using burp suite and simple payloads, then we executed SQLMap commands to see what it would detect automatically, it mapped out some parameters that were injectable, and solved a challenge “error handling”. It demonstrated basic “GET” parameters but nothing that could be used for exploitation. We mainly used SQLmap to compare the automated scanning with the manual testing we did. The goal was to see how much it could detect on its own, and we got a little better understanding of the automated tools and manual SQL injection testing.
