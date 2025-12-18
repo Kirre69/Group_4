@@ -25,7 +25,6 @@ Can you check for spelling mistakes, grammatical errors, and give tips for impro
    - Provide secure javascript code snippets for each vulnerability type, demonstrating remediation techniques such as:
      - Parameterized queries for SQL Injection.
      - Encoding outputs for XSS prevention.
-     - Input validation and sanitization for Command Injection.
    - Clearly comment on each snippet explaining the security measures applied.
 
 3. **Unit Test Case Creation:**
