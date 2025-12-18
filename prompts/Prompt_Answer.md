@@ -57,22 +57,6 @@ user_input = "<script>alert('XSS');</script>"
 print(sanitize_output(user_input))
 ```
 
-### Input Validation and Sanitization (Command Injection)
-```python
-import re
-
-def validate_input(email):
-    # Validating email format to prevent command injection
-    pattern = r'^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$'
-    if not re.match(pattern, email):
-        raise ValueError("Invalid email format")
-    return email
-
-# Example usage with user input
-user_input = "john@example.com"
-print(validate_input(user_input))
-```
-
 ---
 
 ## **Section 3: Unit Test Cases**
@@ -101,21 +85,6 @@ class TestXSSPrevention(unittest.TestCase):
         # Testing that the output does not contain dangerous scripts
         self.assertNotIn("<script>", sanitize_output("<script>alert('XSS');</script>"))
         self.assertIn("alert('XSS');", sanitize_output("Hello<script>alert('XSS');</script>World"))
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
-### Test Case for Input Validation
-```python
-import unittest
-from validate_input import validate_input
-
-class TestInputValidation(unittest.TestCase):
-    def test_invalid_email(self):
-        # Testing that invalid email formats raise an error
-        with self.assertRaises(ValueError):
-            validate_input("john@examplecom")
 
 if __name__ == "__main__":
     unittest.main()
