@@ -44,7 +44,8 @@ SQLMap showed that partial automated detection can reveal sensitive backend data
 - Use parameterized SQL queries: Makes it so the database treat all user input as text only, so it can’t be interpreted as a command
 - Validate user input on the server: check what users send, blocks anything suspicious or with strange characters
 - Show simple error messages so if something goes wrong it doesn't give the attackers detailed database errors, just a generic message.
-
+![Screenshot](Pictures/SQLmap.png)
+![Screenshot](Pictures/SQLmap.png)
 ### 3.2 Cross-Site Scripting (XSS)
 #### Bonus Payload
 In this challenge, the Juice Shop application accepted user controlled HTML that was not sanitized before being stored or displayed. By submitting an iframe element that embedded external content, the browser executed and rendered it directly on the page. This confirmed that the site allowed unfiltered HTML injection, which is a form of stored Cross-Site Scripting (XSS).
@@ -94,6 +95,7 @@ Avoid inserting user controlled input into the DOM without escaping. Apply conte
 ```javascript
 <iframe src="javascript:alert('xss')">
 ```
+![Screenshot](Pictures/DOM_XSS.png)
 ### 3.5 SQL Injection (SQLi)
 #### Login as Admin
 When we tested the login functionality, we discovered that the authentication endpoint was vulnerable to SQL injection. By sending payloads into the username field, the application then returned a valid administrator session. Which confirmed that user supplied data was being inserted directly into the SQL query.
@@ -184,6 +186,7 @@ Login as Jim:
 email: jim@juice-sh.op'--
 password: a
 ```
+![Screenshot](Pictures/Jim_login.png)
 ## 4 What didn’t work
 
 Reflected XSS was one of the attacks we never succeeded with. We tried different payloads in several fields, especially in the customer feedback form, but nothing ever triggered. Even when we submitted scripts and then went to the “About Us” page to read the feedback, it didn't trigger. The alert never appeared, which is strange, but however, things change, versions can differ and some parts may have been updated or patched.
