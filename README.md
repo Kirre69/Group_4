@@ -9,6 +9,7 @@ This project has the aim and objective to Identify an exploit (in a controlled l
 - OWASP Juice Shop V. 16.0.1
 - Burp Suite Community edition V. 2023.7.3
 - SQLmap 1.7.8
+- LM Studio running [deepseek-r1-distill-qwen-14b](https://lmstudio.ai/models/deepseek-r1)
   
 ## Overview
 OWASP Juice Shop was used for this project, it offers a vast amount of different attack vectors to be explored and exploited. However we have chosen to highlight some of the XSS and SQL Injection exploits because they are some of the most well known in the area of Web Application attacks. 
