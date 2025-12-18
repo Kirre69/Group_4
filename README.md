@@ -212,3 +212,7 @@ From there everything started to make sense. We really began to understand the p
 [Pre-Made Cisco ethical hacker kali download](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
 
 [Juice shop guide](https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html)
+
+[Install Juice Shop on kali](https://www.kali.org/tools/juice-shop/)
+
+[Getting started with BurpSuite](https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic)
