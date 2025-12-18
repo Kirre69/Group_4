@@ -32,6 +32,39 @@ Overall, the project results in a practical and well documented walkthrough of h
 ## 2 Methodology
 To do this project we used a practical, experiment-based approach. All testing was done in a
 controlled lab environment on the OWASP Juice Shop application.
+
+### How to setup Juice Shop
+1. Open up a terminal in kali and type:
+```Bash
+Sudo apt install juice-shop
+```
+![JUICE](Pictures/Juice_Shop/Juice_1.png)
+We had some problems with installing it so we had to change and update our keyrings:
+
+```Bash
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://archive.kali.org/archive-key.asc | sudo gpg --dearmor -o /etc/apt/keyrings/kali-archive-keyring.gpg
+
+echo "deb [signed-by=/etc/apt/keyrings/kali-archive-keyring.gpg] [http://http.kali.org/kali](http://http.kali.org/kali) kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list
+
+sudo apt update
+```
+
+2. After installing juice-shop, now it's time to launch it (take into account that it has to be run as root):
+```Bash
+sudo juice-shop -h
+```
+![JUICE](Pictures/Juice_Shop/Juice_2.png)
+
+Juice Shop will start by itself so you can just sit back and relax while it launches
+
+![JUICE](Pictures/Juice_Shop/Juice_3.png)
+
+Now its done!
+
+![JUICE](Pictures/Juice_Shop/Juice_4.png)
+
 ## 3 Findings and Results
 This section summarises the vulnerabilities we discovered in Juice Shop, including multiple instances of both XSS and SQL Injection across different pages and functions.
 ### 3.1 SQLMap
