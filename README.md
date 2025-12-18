@@ -81,9 +81,6 @@ Validate and sanitize all user input before storing it. Apply proper output enco
 <iframe src="javascript:alert('xss')">
 ```
 ### 3.4 DOM XSS
-```javascript 
-<iframe src="javascript:alert('xss')">
-```
 **Search Field:**
 The search bar was vulnerable to DOM-based Cross-Site Scripting. Injected JavaScript could be directly executed in the browser due to unsafe handling of the query parameter in client-side JavaScript.
 
