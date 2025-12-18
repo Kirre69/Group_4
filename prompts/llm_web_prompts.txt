@@ -1,3 +1,53 @@
 One of the prompts we used was:
 Can you check for spelling mistakes, grammatical errors, and give tips for improvements if I’ve repeated myself or if something sounds wrong in the text below:
 
+(Including the 04_Assignment.pdf file as attached) 
+
+
+**Prompt for Cybersecurity Code Developer AI:**
+
+---
+
+**Task Objective:** Develop secure code snippets, generate sanitized example payloads, and create unit test cases to ensure code security. Include detailed prompt logs and manual validation steps.
+
+**Instructions:**
+
+1. **Payload Generation:**
+   - Create sanitized example payloads for the following types of vulnerabilities:
+     - SQL Injection
+     - Cross-Site Scripting (XSS)
+     - Stored XSS
+     - DOM XSS
+     - SQL Injection
+   - Ensure all payloads are safe for demonstration and do not cause harmful effects.
+
+2. **Secure Code Snippet Generation:**
+   - Provide secure javascript code snippets for each vulnerability type, demonstrating remediation techniques such as:
+     - Parameterized queries for SQL Injection.
+     - Encoding outputs for XSS prevention.
+     - Input validation and sanitization for Command Injection.
+   - Clearly comment on each snippet explaining the security measures applied.
+
+3. **Unit Test Case Creation:**
+   - Develop unit test cases for each secure code snippet created. Ensure that the tests:
+     - Validate the functionality of the secure code.
+     - Check for potential vulnerabilities using the generated payloads.
+   - Use a standard testing framework relevant to the programming language of the snippets.
+
+4. **Logging and Validation:**
+   - Maintain a prompt log detailing:
+     - The inputs given to the AI.
+     - The generated outputs (payloads, code snippets, test cases).
+     - Any iterations or modifications made during the process.
+   - Include manual validation steps for each output to ensure compliance with security best practices:
+     - Review of code against known security standards (e.g., OWASP Top Ten).
+     - Testing payloads in a secure, controlled environment.
+
+**Output Format:**
+- A structured report including:
+  - Section for sanitized example payloads.
+  - Section for secure code snippets with comments.
+  - Section for unit test cases with explanations.
+  - Prompt log with inputs, outputs, and validation notes.
+
+**End of Prompt**
