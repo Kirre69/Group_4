@@ -30,8 +30,12 @@ The work combines both technical analysis with a security approach. We conducted
 Overall, the project results in a practical and well documented walkthrough of how SQLi and XSS can be discovered, exploited in a safe manner, and then properly mitigated. The goal was not only to show how these attacks work in practice, but also to enhance ourunderstanding of secure development principles and what developers can do to protect modern web applications from similar issues.
 
 ## 2 Methodology
-To do this project we used a practical, experiment-based approach. All testing was done in a
-controlled lab environment on the OWASP Juice Shop application.
+To do this project we used a practical, experiment-based approach. All testing was done in a controlled lab environment on the OWASP Juice Shop application, ensuring that no real systems or data were exposed to a risk.
+
+The testing process began by doing reconnaissance of the application, we wanted to understand the structure, functionally and potential attack surface. We then carried out systematic testing of input fields and entry points. We used both manual techniques and automated tools. Simple payloads were used to observe the applications behavior, followed by a more advanced attack technique to confirm the presence of vulnerabilities. 
+
+Each vulnerability was documented with clear proof of concepts demonstrating its impact. And then we analyzed the mitigation strategies and validated potential fixes to ensure that the vulnerabilities could be effectively resolved.
+
 
 ### How to setup Juice Shop
 1. Open up a terminal in kali and type:
